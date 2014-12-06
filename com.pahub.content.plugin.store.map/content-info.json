@@ -1,0 +1,32 @@
+{
+    "content_id": "com.pahub.content.plugin.store.map",
+    "store_id": "com.pahub.content.plugin.store.plugin",
+    "display_name": "Map Store",
+    "description": "(Store) Manage installed Maps, which can be used with the System Sharing Mod by cptconundrum",
+    "author": "Raevn",
+    "version": "0.1.0",
+    "date": "2014/12/06",
+    "resources": [
+        "com.pahub.content.plugin.store.map.js"
+    ],
+    "load_func": "load_map_store_plugin",
+    "unload_func": "unload_map_store_plugin",
+    "custom_install_content_func": "map_store_install_content",
+    "custom_write_content_func": "map_store_write_content",
+    "find_local_content_func": "map_store_find_local_content",
+    "find_online_content_func": "map_store_find_online_content",
+    "local_content_path": "mods/com.pa.pahub.mods.maps/ui/mods/com.pa.pahub.mods.maps/systems",
+    "online_content_path": "https://raw.githubusercontent.com/pamods/mods-conundrum/master/cShareSystems_serverList/serverlist.json",
+    "content_name": "Map",
+    "enabled": false,
+    "content_colour": [
+        0,
+        255,
+        140
+    ],
+    "required": {
+        "com.pahub": ">=0.4.0",
+        "com.pahub.content.plugin.contenthub": ">=0.5.0",
+        "com.pahub.content.plugin.store.mod": "0.3.0"
+    }
+}
