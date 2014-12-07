@@ -18,7 +18,7 @@
     "local_content_path": "mods/com.pa.pahub.mods.maps/ui/mods/com.pa.pahub.mods.maps/systems",
     "online_content_path": "https://raw.githubusercontent.com/pamods/mods-conundrum/master/cShareSystems_serverList/serverlist.json",
     "content_name": "Map",
-    "enabled": false,
+    "enabled": true,
     "content_colour": [
         0,
         255,
