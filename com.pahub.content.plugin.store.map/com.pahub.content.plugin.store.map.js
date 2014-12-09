@@ -152,8 +152,23 @@ function map_store_install_content(content_id, update) {
 		writeJSONtoFile(path.join(constant.PA_DATA_DIR, content.store.data.local_content_path, content.data.file + ".pas"), data);
 		model.content.maps.writeMaplist();
 	} else {
-		pahub.api.log.addLogMessage("error", "Failed to install map '" + content_id + "' (map data not found)");
+		pahub.api.log.addLogMessage("error", "Failed to install map '" + content_id + "': Map data not found");
 	}
+}
+
+function map_store_uninstall_content(content_id) {
+	if (pahub.api.content.contentItemExists(true, content_id) == true) {
+		var content = pahub.api.content.getContentItem(true, content_id);
+		pahub.api.content.removeContentItem(true, content_id);
+		try {
+			fs.unlinkSync(path.join(constant.PA_DATA_DIR, content.store.data.local_content_path, content.data.file + ".pas"));
+		} catch (err) {
+			pahub.api.log.addLogMessage("error", "Error removing map '" + content.data.file + ".pas': " + err);
+		}
+	} else {
+		pahub.api.log.addLogMessage("error", "Failed to uninstall map '" + content_id + "': Map is not installed");
+	}
+
 }
 
 function map_store_find_online_content(store_id, catalogJSON) {
